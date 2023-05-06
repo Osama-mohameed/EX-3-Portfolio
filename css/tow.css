@@ -1,0 +1,445 @@
+/* start variables */
+:root{
+    --main-color: #1BA098;
+    --second-color :#DEB992;
+    --theard-color : #051622;
+
+}
+.special-heading {
+    color:#ebeced;
+    font-size:100px;
+    text-align:center;
+    font-weight:800;
+    margin:0;
+}
+.special-heading + p{
+    text-align: center;
+    margin: -30px;
+    font-size: 20px;
+    color: #797979;
+}
+/* end variables */
+
+
+/* Start globalRules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+}
+/* End globalRules */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Work Sans';
+}
+header{
+    position: fixed;
+    top:0;
+    right:0;
+    
+
+}
+ul {
+    list-style:none;
+}
+::selection {
+    background: #DEB992;
+}
+/* End globalRules */
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1170px;
+}
+/* small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+   .container {
+        width: 1170px
+    }
+}
+/* ----------------------------------------------------------------------------------- */
+/* Start Header */
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+header .logo img {
+height: 55px;
+}
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header nav .toggle {
+    color: var(--second-color)
+}
+@media (min-width: 768px){
+    header nav .toggle {
+        display: none;
+    }
+}
+header nav ul {
+    display: flex;
+}
+@media (max-width: 767px) { 
+header nav ul {
+display: none;
+}
+header nav .toggle:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--theard-color);
+    opacity: 70%;
+}
+header nav ul li a {
+    padding: 20px !important;
+}
+}
+header nav ul li a {
+    padding: 30px 10px;
+    display: block;
+    color: var(--second-color);
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 3;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 80px;
+    /* border-bottom: 1.5px solid black; */
+}
+header .container::after {
+    content: '';
+    position: absolute;
+    height:1px;
+    background-color: var(--second-color);    
+    bottom: 0;
+    width: calc(100% - 30px);
+    left: 15px;
+ }
+ header nav ul a.active,
+ header nav ul a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+    text-shadow:0px 0px 3px rgba(188, 225, 229, 0.938);
+
+ }
+ header nav .form {
+    width: 95px;
+    height: 30px;
+    position: relative;
+    margin-left: 35px;
+    border-left: 1px solid var(--second-color);
+ }
+ header nav .before {
+    color: var(--main-color);
+    position: absolute;
+    top: 50%;   
+    right:40px;
+    padding: 13px;
+    transform: translateY(-50%); 
+    cursor: pointer;
+}
+ .after {
+    color: var(--main-color);
+    cursor: pointer;
+    padding: .6rem;
+}
+ header nav .fa-person-circle-plus {
+    color: var(--main-color);
+    position: absolute;
+    top: 50%;   
+    right:0;
+    padding: 13px;
+    transform: translateY(-50%); 
+    cursor: pointer;
+}
+header nav .fa-person-circle-plus:hover,
+header nav .before:hover,
+.after:hover {
+    color: var(--second-color);
+}
+
+header .f_Search {
+    position: absolute;
+    top:100%;
+    left: 0;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    padding: .5rem .8rem;
+    border-top: 0.1rem solid ;
+    clip-path: polygon(0 0 ,100% 0 , 100% 0 ,0 0);
+    
+}
+header .f_Search.active {
+    clip-path: polygon(0 0 ,100% 0 , 100% 100% ,0 100%);
+
+}
+header .f_Search #search_Bar {
+    width: 70%;
+    padding: 0.1rem 2rem;
+    border-radius: .8rem;
+    background: none;
+    color:var(--second-color);
+}
+.sama {
+    color: var(--second-color);
+    font-size: 2rem;
+}
+.sama span{
+    color:var(--main-color);
+}
+ /* End Header */
+/* start landding  */
+.landing {
+    min-height: 100vh;
+    background-image: url('../images/pexels-eberhard-grossgasteiger-1417651.jpg');
+    background-size: cover;
+    position: relative;
+}
+/* 
+.landing img {
+    width:300px;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 50px ;
+    transform: translateY(-50%);
+
+} */
+.landing .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--theard-color); */
+    background-color: black;
+    opacity: 70%;
+}
+.landing .text {
+    position: absolute;
+    left: 10%;
+    top:50%;
+    transform: translateY(-50%);
+    padding: 40px;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 650px;
+}
+.landing .text h2 {
+    font-size: 50px;
+    font-weight: normal;
+    color: var(--main-color);
+    margin-bottom: 5px;
+}
+.landing .text p {
+    color: var(--second-color);
+    font-size: 30px;
+
+}   
+/* End landding  */
+/* start login */
+.login-form {
+    position: fixed;
+    top:-130%;
+    left:0;
+    min-height: 100vh;
+    width:100%;
+    background: rgba(0, 0, 0, 0.8);
+    /* opacity: 70%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.login-form.active{
+    top:0;
+}
+.login-form form {
+    margin: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    background: #DEB992;
+    width: 30rem;
+    
+}
+.login-form form h3 {
+    font-size: 1.5rem;
+    color: var(--theard-color);
+    text-transform: uppercase;
+    padding: 1rem 0;
+    text-align: center;
+}
+.login-form .box {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--theard-color);
+    margin: .6rem 0;
+    border: .1rem solid var(--theard-color ) ;
+    opacity: .6rem;
+    border-radius: 5rem;
+}
+ .btn {
+    display: flex;
+    color: var(--main-color);
+    width: 30%;
+    padding: .4rem;
+    font-size: 1.4rem;
+    margin: .6rem 1%;
+    border: .1rem solid var(--main-color );
+    border-radius: 5rem;
+    justify-content: space-around;
+}
+@media (max-width: 768px){
+    .btn {
+        font-size: .7rem;
+    }
+}
+.btn:hover {
+    color:#3dd3c9;
+    /* background: var(--second-color); */
+}
+.login-form form #remember{
+    margin: 2rem 0;
+}
+.login-form form label {
+    font-size: 1.3rem;
+}
+.login-form p {
+    padding: .5rem 0 ;
+    font-size: 1.2rem;
+    color: #666;
+
+}
+.login-form p a{
+    color: var(--main-color);
+}
+.login-form #form-close{
+    position: absolute;
+    top:2rem;
+    right: 3rem;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+    
+}
+/* end login */
+/* start Services */
+.Services {
+    padding:50px 0 ;
+    display: flex;
+}
+.Services .info-box {
+flex: 1;
+padding: 30px;
+}
+.Services .info-box h3{
+    font-weight: bold;
+    font-size:30px;
+    color: var(--main-color);
+    margin: 0 0 10px;
+}
+.Services .info-box p {
+line-height: 1.8;
+color: #767676;
+margin: 0;
+}
+
+.Services .imgs-box {
+    flex: 1;
+    text-align: end;
+}
+.Services .imgs-box img {
+    width: 300px;
+}
+/* end Services */
+/* start portfolio*/
+.portfolio {
+    padding: 60px 0;
+    background-color: #f6f6f6;
+}
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-gap: 10px;
+    margin-top: 60px;
+
+}
+ .portfolio .portfolio-content .card {
+    background-color: white;
+    text-align: center;
+ }
+ .portfolio  .portfolio-content .card  img {
+    max-width: 100%;
+    width: 450px;
+    height: 250px;
+    transition:0.4s;
+}
+.portfolio  .portfolio-content .card  img:hover {
+    transform:scale(1.1);
+}
+.portfolio  .portfolio-content .card .info {
+    padding:20px
+}
+.portfolio  .portfolio-content .card .info h3 {
+    margin: 0;
+}
+.portfolio  .portfolio-content .card .info p {
+    color: #777;
+    line-height: 1.6;
+}
+/* end portfolio*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
